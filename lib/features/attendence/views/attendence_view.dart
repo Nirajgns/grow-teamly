@@ -11,6 +11,7 @@ class _AttendanceViewState extends State<AttendanceView> {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text("Attendence"),
       ),
       

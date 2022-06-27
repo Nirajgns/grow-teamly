@@ -12,7 +12,7 @@ class _DailyUpdateViewState extends State<DailyUpdateView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Dailyupdate",style: TextStyle(color: Colors.yellowAccent),),
+        title: Text("Daily Update",),
         centerTitle: true,
       ),
       

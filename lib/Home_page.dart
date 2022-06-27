@@ -3,7 +3,7 @@ import 'package:profileapp/features/attendence/views/attendence_view.dart';
 import 'package:profileapp/features/dashboard/views/dashboard_view.dart';
 import 'package:profileapp/features/leaves/views/leave_view.dart';
 import 'package:profileapp/features/profile/views/profile_view.dart';
-import 'features/daily_updates/views/dailyupdate_view.dart';
+import 'features/daily_updates/views/daily_update_view.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({

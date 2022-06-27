@@ -13,25 +13,33 @@ import 'package:shared_preferences/shared_preferences.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await SetupLocator();
-  String? token=locator.get <SharedPreferences>().getString(AppConstants.token);
+  String? token =
+      locator.get<SharedPreferences>().getString(AppConstants.token);
 
-  runApp(MultiProvider(providers: [
-    ChangeNotifierProvider(create: ((context) => CounterProvider())),
-    ChangeNotifierProvider(create: ((context) => AuthProvider())),
-  ], child: TestApp( token:token,)));
+  runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: ((context) => CounterProvider())),
+        ChangeNotifierProvider(create: ((context) => AuthProvider())),
+      ],
+      child: TestApp(
+        token: token,
+      ),
+    ),
+  );
 }
 
 class TestApp extends StatelessWidget {
   final String? token;
-   TestApp({Key? key, this.token}) : super(key: key);
+  TestApp({Key? key, this.token}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: "Grow Teamly",
       onGenerateRoute: RouteHandler.generateRoute,
-     // home: token != null ? Homepage(): Loginpage(),
-     initialRoute: token != null ? AppRoutes.homeRoute:AppRoutes.loginRoute,
+      // home: token != null ? Homepage(): Loginpage(),
+      initialRoute: token != null ? AppRoutes.homeRoute : AppRoutes.loginRoute,
       debugShowCheckedModeBanner: false,
     );
   }

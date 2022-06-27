@@ -11,7 +11,7 @@ class _LeaveViewState extends State<LeaveView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Leaveview"),
+        title: Text("Leaves View"),
         centerTitle: true,
       ),
       

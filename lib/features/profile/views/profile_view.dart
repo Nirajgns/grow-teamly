@@ -37,7 +37,7 @@ class _ProfileViewState extends State<ProfileView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Profileview"),
+        title: Text("Profile View"),
         centerTitle: true,
         actions: [
           //this is for logout
@@ -47,7 +47,8 @@ class _ProfileViewState extends State<ProfileView> {
                 final bool isConfirmed = await getConfirmationDialog(context);
                 if (isConfirmed) {
                   locator.get<SharedPreferences>().clear();
-                  Navigator.pushNamedAndRemoveUntil(context, AppRoutes.loginRoute, (route) => false);
+                  Navigator.pushNamedAndRemoveUntil(
+                      context, AppRoutes.loginRoute, (route) => false);
                   // Navigator.pushAndRemoveUntil(
                   //     context,
                   //     MaterialPageRoute(
@@ -133,9 +134,13 @@ class _ProfileViewState extends State<ProfileView> {
                     height: 10,
                   ),
                   Text("Supervisor: ${_profileModel?.supervisorName}"),
-                  ElevatedButton(onPressed: (){
-                    Navigator.pushNamed(context, AppRoutes.dummyRoute,arguments: DummyPageModel(name: "Hello", address: "Kathamandu", age: 20) );
-                  }, child: Text("Navigate"))
+                  ElevatedButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, AppRoutes.dummyRoute,
+                            arguments: DummyPageModel(
+                                name: "Hello", address: "Kathamandu", age: 20));
+                      },
+                      child: Text("Navigate"))
                 ],
               ),
             ),

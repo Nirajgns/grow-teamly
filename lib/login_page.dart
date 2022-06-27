@@ -44,6 +44,8 @@ class _LoginpageState extends State<Loginpage> {
                   children: [
                     SizedBox(height: 30),
                     Image.network(ImageConstants.appLogo, height: 150),
+
+
                     TextFormField(
                       controller: _phoneController,
                       keyboardType: TextInputType.number,
@@ -68,6 +70,8 @@ class _LoginpageState extends State<Loginpage> {
                             Icons.phone,
                           )),
                     ),
+
+                    
                     TextFormField(
                         controller: _passwordController,
                         obscureText: isobscure,
