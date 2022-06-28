@@ -9,6 +9,7 @@ import 'package:profileapp/providers/auth_provider.dart';
 import 'package:profileapp/providers/counter_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:ffi';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:profileapp/constants/api_endpoint.dart';
+import 'package:profileapp/constants/api_endpoints.dart';
 import 'package:profileapp/core/header.dart';
 
 class NetworkClient {

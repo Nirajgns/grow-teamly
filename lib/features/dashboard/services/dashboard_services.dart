@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:profileapp/constants/api_endpoint.dart';
+import 'package:profileapp/constants/api_endpoints.dart';
 import 'package:profileapp/core/network_client.dart';
 import 'package:profileapp/features/dashboard/model/dashboard_card.dart';
 

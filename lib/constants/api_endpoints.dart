@@ -4,5 +4,6 @@ class ApiEndpoints{
 
   static const String profile="/auth/profile";
   static const String dashboradCardData ="/v1/dashboard-card-data";
+  static const String fetchDailyUpdate= "/v1/dailyUpdates/my-index?page=1&rowsPerPage=25&sortBy=null&descending=false&query=&filters={}";
 
 }
