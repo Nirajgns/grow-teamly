@@ -6,7 +6,7 @@ import 'package:profileapp/core/network_client.dart';
 import 'package:profileapp/features/daily_updates/models/daily_update_model.dart';
 
 class DailyUpdateServices {
-Future<List<DailyUpdateModel>> fetchDailyUodates() async {
+Future<List<DailyUpdateModel>> fetchDailyUpdates() async {
     final http.Response? response =
         await NetworkClient().getRequest(path: ApiEndpoints.fetchDailyUpdate);
 
