@@ -21,8 +21,8 @@ class _DailyUpdatesViewState extends State<DailyUpdatesView> {
 
   fetchDailyUpdates() async {
     DailyUpdateServices dailyUpdate = DailyUpdateServices();
-    dailyUpdate.fetchDailyUodates();
-    dailyUpdates = await dailyUpdate.fetchDailyUodates();
+    dailyUpdate.fetchDailyUpdates();
+    dailyUpdates = await dailyUpdate.fetchDailyUpdates();
     _isLoading = false;
     if (mounted) setState(() {});
   }
