@@ -3,7 +3,7 @@ class DailyUpdateModel {
   int? userId;
   String? title;
   String? description;
-  String? projectId;
+  int? projectId;
   String? acknowledgedAt;
 
   DailyUpdateModel(

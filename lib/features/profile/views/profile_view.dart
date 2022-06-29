@@ -30,7 +30,7 @@ class _ProfileViewState extends State<ProfileView> {
     _profileModel = await ProfileServices().fetchProile();
 
     _isloading = false;
-    setState(() {});
+    if (mounted) setState(() {});
   }
 
   @override

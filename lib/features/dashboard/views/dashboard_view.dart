@@ -24,7 +24,7 @@ class _DashboardViewState extends State<DashboardView> {
         await DashboardServices().fetchDashboardCardData();
     dashboardCard = response;
     _isloading = false;
-    setState(() {});
+    if (mounted) setState(() {});
   }
 
   @override
