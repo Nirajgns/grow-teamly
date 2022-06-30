@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:profileapp/features/daily_updates/models/daily_update_model.dart';
 import 'package:profileapp/features/daily_updates/services/daily_update_services.dart';
@@ -37,18 +39,48 @@ class _DailyUpdatesViewState extends State<DailyUpdatesView> {
         ),
         centerTitle: true,
       ),
-      body: _isLoading
-          ? const CircularProgressIndicator()
-          : ListView.separated(
-              separatorBuilder: (context, index) => Divider(),
-              itemCount: dailyUpdates.length,
-              itemBuilder: (BuildContext context, int index) {
-                return ListTile(
-                  title: Text(dailyUpdates[index].title ?? ""),
-                  subtitle: Text(dailyUpdates[index].description ?? ""),
-                );
-              },
-            ),
+      floatingActionButton: 
+      
+      FloatingActionButton(
+        onPressed: () {
+
+        },
+        child: Icon(Icons.add),
+        
+      ),
+      body: Center(
+        child: _isLoading
+            ? const CircularProgressIndicator()
+            : ListView.separated(
+                separatorBuilder: (context, index) => Divider(),
+                itemCount: dailyUpdates.length,
+                itemBuilder: (BuildContext context, int index) {
+                  return ListTile(
+                    title: Text(dailyUpdates[index].title ?? ""),
+                    subtitle: Text(dailyUpdates[index].description ?? ""),
+                    trailing: dailyUpdates[index].acknowledgedAt == null
+                        ? Row(
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              InkWell(
+                                child: Icon(Icons.edit),
+                                onTap: () {
+                                  log("edit tapped");
+                                },
+                              ),
+                              InkWell(
+                                child: Icon(Icons.delete),
+                                onTap: () {
+                                  log("delete tapped");
+                                },
+                              ),
+                            ],
+                          )
+                        : SizedBox(),
+                  );
+                },
+              ),
+      ),
     );
   }
 }

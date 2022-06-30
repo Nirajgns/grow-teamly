@@ -42,7 +42,7 @@ class _LoginpageState extends State<Loginpage> {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    SizedBox(height: 30),
+                    const SizedBox(height: 30),
                     Image.network(ImageConstants.appLogo, height: 150),
 
 
@@ -59,7 +59,7 @@ class _LoginpageState extends State<Loginpage> {
                           return null;
                         }
                       },
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "Phone number",
                           labelText: "Phone number",
                           border: OutlineInputBorder(
@@ -87,9 +87,9 @@ class _LoginpageState extends State<Loginpage> {
                         decoration: InputDecoration(
                             hintText: "Password",
                             labelText: "Password",
-                            border: OutlineInputBorder(),
+                            border: const OutlineInputBorder(),
                             suffixIcon: GestureDetector(
-                              child: Icon(Icons.visibility),
+                              child: const Icon(Icons.visibility),
                               onLongPressStart: (val) {
                                 setState(() {
                                   isobscure = false;
@@ -110,7 +110,7 @@ class _LoginpageState extends State<Loginpage> {
                             //           ? Icons.remove_red_eye
                             //           : Icons.visibility_off,
                             //     )),
-                            prefixIcon: Icon(
+                            prefixIcon: const Icon(
                               Icons.fingerprint_outlined,
                             ))),
                     ElevatedButton(
@@ -134,7 +134,7 @@ class _LoginpageState extends State<Loginpage> {
                               locator.get<SharedPreferences>().setString(
                                   AppConstants.token, response.data!);
                               AppSnacks.showSnacksBar(context,
-                                  message: "sanjit kumar mehta");
+                                  message: "Logged in successfully");
                               // ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                               //   content: Text("loged in ${response.data}"),
                               //   duration: Duration(seconds: 5),
@@ -155,13 +155,13 @@ class _LoginpageState extends State<Loginpage> {
                             }
                           }
                         },
-                        child: Text(("Login"))),
+                        child: const Text(("Login"))),
                   ],
                 ),
               ),
             ),
           ),
-          if (isLoading) Center(child: CircularProgressIndicator())
+          if (isLoading) const Center(child: const CircularProgressIndicator())
         ]),
       ),
     );
