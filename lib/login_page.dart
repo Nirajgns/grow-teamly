@@ -140,11 +140,11 @@ class _LoginpageState extends State<Loginpage> {
                               //   duration: Duration(seconds: 5),
                               // ));
                               Navigator.pushNamedAndRemoveUntil(context, AppRoutes.homeRoute,  (route) => false);
-                              // Navigator.pushAndRemoveUntil(
-                              //     context,
-                              //     CupertinoPageRoute(
-                              //         builder: (context) => Homepage()),
-                              //     (route) => false);
+                              Navigator.pushAndRemoveUntil(
+                                  context,
+                                  CupertinoPageRoute(
+                                      builder: (context) => Homepage()),
+                                  (route) => false);
                             } else {
                               AppSnacks.showSnacksBar(context,
                                   message: "Invalid credentials.");

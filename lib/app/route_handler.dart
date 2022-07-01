@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:profileapp/app/routes.dart';
@@ -13,20 +11,30 @@ import 'package:flutter/material.dart';
 class RouteHandler {
   static Route<dynamic> generateRoute(RouteSettings settings) {
     var arguments = settings.arguments;
+
     switch (settings.name) {
       case AppRoutes.loginRoute:
-        return MaterialPageRoute(builder: ((context) => const Loginpage()));
+        return MaterialPageRoute(
+          builder: ((context) => const Loginpage()),
+        );
+
       case AppRoutes.homeRoute:
-        return MaterialPageRoute(builder: ((context) => const Homepage()));
+        return MaterialPageRoute(
+          builder: ((context) => const Homepage()),
+        );
+
       case AppRoutes.addDailyUpdateRoute:
         return MaterialPageRoute(
-            builder: ((context) => const AddDailyUpdateView()));
+          builder: ((context) => const AddDailyUpdateView()),
+        );
+
       case AppRoutes.dummyRoute:
         return MaterialPageRoute(
           builder: ((context) => DummyPage(
                 data: arguments as DummyPageModel,
               )),
         );
+
       default:
         return MaterialPageRoute(
           builder: ((context) => const Loginpage()),

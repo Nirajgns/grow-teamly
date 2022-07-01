@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:profileapp/features/attendence/views/attendence_view.dart';
 import 'package:profileapp/features/dashboard/views/dashboard_view.dart';
 import 'package:profileapp/features/leaves/views/leave_view.dart';
@@ -15,25 +16,34 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  List<Widget> pages=[
-    DashboardView(),
-    DailyUpdatesView(),
-    AttendanceView(),
-    LeaveView(),
-    ProfileView(),
-
+  List<Widget> pages = [
+    const DashboardView(),
+    const DailyUpdatesView(),
+    const AttendanceView(),
+    const LeaveView(),
+    const ProfileView(),
   ];
-  int _currentindex=0;
+  int _currentindex = 0;
   @override
   Widget build(BuildContext context) {
-    
-    return Scaffold(
-      // appBar: AppBar(
-      //   centerTitle: true,
-      //   title: Text(
-      //     "Homepage",
-      //     style: TextStyle(color: Color.fromARGB(255, 57, 34, 149)),
-      //   ),
+    return WillPopScope(
+      onWillPop: () async {
+        if (_currentindex == 0) {
+          SystemNavigator.pop();
+        } else {
+          setState(() {
+            _currentindex = 0;
+          });
+        }
+        return false;
+      },
+      child: Scaffold(
+        // appBar: AppBar(
+        //   centerTitle: true,
+        //   title: Text(
+        //     "Homepage",
+        //     style: TextStyle(color: Color.fromARGB(255, 57, 34, 149)),
+        //   ),
         // actions: [
         //   IconButton(
         //       onPressed: () {
@@ -47,49 +57,47 @@ class _HomepageState extends State<Homepage> {
         //       },
         //       icon: Icon(Icons.logout))
         // ],
-      // ),
-      body: pages[_currentindex],
-      bottomNavigationBar: BottomNavigationBar(
-        selectedItemColor: Colors.blue,
-        unselectedItemColor: Colors.grey,
-        currentIndex: _currentindex,
-        items: const [
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.dashboard,
-            ),
-            label: "Dashboard"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.update,
-            ),
-            label: "update"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.insights,
-            ),
-            label: "Attendence"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.holiday_village,
-            ),
-            label: "holiday_village"
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.person,
-            ),
-            label: "person"
-          ),
-        ],
-        onTap: (index) {
-         setState(() {
-            _currentindex =index;
-         });
-        },
+        // ),
+        body: pages[_currentindex],
+        bottomNavigationBar: BottomNavigationBar(
+          selectedItemColor: Colors.blue,
+          unselectedItemColor: Colors.grey,
+          currentIndex: _currentindex,
+          items: const [
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.dashboard,
+                ),
+                label: "Dashboard"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.update,
+                ),
+                label: "update"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.insights,
+                ),
+                label: "Attendence"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.holiday_village,
+                ),
+                label: "holiday_village"),
+            BottomNavigationBarItem(
+                icon: Icon(
+                  Icons.person,
+                ),
+                label: "person"),
+          ],
+          onTap: (index) {
+            setState(
+              () {
+                _currentindex = index;
+              },
+            );
+          },
+        ),
       ),
     );
   }
