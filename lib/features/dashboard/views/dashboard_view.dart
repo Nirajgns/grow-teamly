@@ -41,11 +41,17 @@ class _DashboardViewState extends State<DashboardView> {
         automaticallyImplyLeading: false,
         centerTitle: true,
       ),
+
+      //!body
+
       body: _isloading
           ? const Center(
               child: CircularProgressIndicator(
                 color: Colors.redAccent,
               ),
+            ): dashboardCard ==null ?
+            Center(
+              child: Text('Something is wrong...'),
             )
           : Center(
               child: Column(

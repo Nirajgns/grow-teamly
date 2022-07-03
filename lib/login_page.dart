@@ -7,7 +7,7 @@ import 'package:profileapp/app/routes.dart';
 import 'package:profileapp/constants/app_constants.dart';
 import 'package:profileapp/helpers/snacks.dart';
 import 'package:profileapp/home_page.dart';
-import 'package:profileapp/injector.dart';
+import 'package:profileapp/locator.dart';
 import 'package:profileapp/models/login_response_model.dart';
 import 'package:profileapp/services/auth_services.dart';
 import 'package:shared_preferences/shared_preferences.dart';

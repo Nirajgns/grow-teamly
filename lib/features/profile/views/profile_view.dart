@@ -7,7 +7,7 @@ import 'package:profileapp/helpers/confirmatiom_dialog.dart';
 import 'package:profileapp/image-constants.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-import '../../../injector.dart';
+import '../../../locator.dart';
 import '../../../login_page.dart';
 
 class ProfileView extends StatefulWidget {

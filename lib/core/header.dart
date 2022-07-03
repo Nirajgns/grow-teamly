@@ -1,5 +1,5 @@
 import 'package:profileapp/constants/app_constants.dart';
-import 'package:profileapp/injector.dart';
+import 'package:profileapp/locator.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Map<String, String> getHeader(){
